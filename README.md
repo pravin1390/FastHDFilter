@@ -8,5 +8,5 @@ Main files in the code:
 2) nlm_approx.m - For non-local means filtering of high-dimensional images. 
 3) bilateralHSdenoise.m - For hyperspectal filtering. 
 
-If you nedd to use O(1) Gaussian filtering, you have to create mex file for young.cpp using the command
+If you need to use O(1) Gaussian filtering, you have to create mex file for young.cpp using the command
 mex young.cpp 
