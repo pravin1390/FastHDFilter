@@ -41,6 +41,8 @@ spatialtype='box';
 convmethod='O1'; % 'matlab' for matlab convolutions and 'O1' for O(1) convolutions
 Ikmean=fastKmeansfiltapproxinter(I2,S,3.5*sigma/256,Centre,spatialtype,convmethod,fast_flag,Apca);      % nlm kmeans
 Ikmean=Ikmean.*255;
+Ikmean(Ikmean>=255)=255;
+Ikmean(Ikmean<=0)=0;
 toc
 Tkmeans=toc;
 fprintf('non local means by Kmeans complete with %d clusters \n',Cluster);
