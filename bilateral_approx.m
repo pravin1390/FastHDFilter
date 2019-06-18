@@ -40,6 +40,8 @@ spatialtype='gaussian';
 convmethod='O1'; % 'matlab' for matlab convolutions and 'O1' for O(1) convolutions
 Ikmean=fastKmeansfiltapproxinter(Iact,sigs,sigr/255,Centre,spatialtype,convmethod,fast_flag);      % bilateral kmeans
 Ikmean=Ikmean.*255;
+Ikmean(Ikmean>=255)=255;
+Ikmean(Ikmean<=0)=0;
 Tkmeans=toc;
 fprintf('Fast bilateral filter by Kmeans complete with %d clusters \n',size(Centre,1));
 fprintf('time for fast bilateral(ms)=%3.0f \n',Tkmeans*1000);
