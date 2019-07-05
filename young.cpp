@@ -211,10 +211,10 @@ void mexFunction(int nlhs, mxArray **plhs, int nrhs, const mxArray **prhs)
     size = mxGetDimensions(IMAGE_IN);
     int rows=(int)size[0];
     int columns=(int)size[1];
-    double *indata=new double[rows*columns];
+    double *indata; /*=new double[rows*columns];*/ 
     indata =mxGetPr(IMAGE_IN);
     IMAGE_OUT = mxCreateDoubleMatrix(rows, columns, mxREAL);
-    double *outdata=new double[rows*columns];
+    double *outdata; /*=new double[rows*columns];*/ 
     outdata =mxGetPr(IMAGE_OUT);
     double **inmat=alloc_array(rows,columns);
     for(int i=0;i<rows;i++){
